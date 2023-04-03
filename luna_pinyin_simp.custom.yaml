@@ -1,0 +1,7 @@
+patch:
+  # 默认英文模式
+  "switches/@0/reset": 1
+
+  # 更改符号来源
+  "punctuator/import_preset": lexur_symbols                 # 使用 lexur_symbols.yaml文件
+  "recognizer/patterns/punct": "^i([A-Z|a-z]*|[0-9]|10)$"   #更改触发前缀为 i ，也可将i替换为 u 

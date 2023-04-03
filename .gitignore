@@ -1,0 +1,7 @@
+/build/
+/build/*
+installation.yaml
+sync/
+/sync/*
+/luna_pinyin.userdb/
+/luna_pinyin.userdb/*

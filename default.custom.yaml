@@ -1,0 +1,39 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Mon Apr  3 21:51:38 2023"
+  rime_version: 1.5.3
+
+# 修改部分
+patch:
+  # 输入模式
+  schema_list:
+    - {schema: luna_pinyin_simp} #明月简体拼音
+
+  # 将切换快捷键改为 ctrl + `
+  "switcher/hotkeys":
+    -"Control+grave"
+
+  # 设置左shfit直接转为英文
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: clear
+    Shift_L: commit_code  #设置左shfit直接转为英文
+    Shift_R: inline_ascii #设置右shift转换为英文候补
+    Control_L: noop       #去除左ctrl功能
+    Control_R: noop       #去除右ctrl功能
+  
+  # 一下为默认快捷键，根据需求自行修改
+  # key_binder:
+  #   bindings:
+  #     - {accept: "Control+Shift+1", select: .next, when: always}                  #
+  #     - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
+  #     - {accept: "Control+Shift+3", toggle: full_shape, when: always}
+  #     - {accept: "Control+Shift+4", toggle: simplification, when: always}
+  #     - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
+  #     - {accept: "Control+Shift+exclam", select: .next, when: always}
+  #     - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
+  #     - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
+  #     - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
+  #     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
