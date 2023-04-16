@@ -25,15 +25,30 @@ patch:
     Control_R: noop       #去除右ctrl功能
   
   # 一下为默认快捷键，根据需求自行修改
-  # key_binder:
-  #   bindings:
-  #     - {accept: "Control+Shift+1", select: .next, when: always}                  #
-  #     - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
-  #     - {accept: "Control+Shift+3", toggle: full_shape, when: always}
-  #     - {accept: "Control+Shift+4", toggle: simplification, when: always}
-  #     - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
-  #     - {accept: "Control+Shift+exclam", select: .next, when: always}
-  #     - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
-  #     - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
-  #     - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
-  #     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+  # 键位绑定指南：见 README.md
+  key_binder:
+    bindings:
+      # ===========
+      # 默认快捷键
+      # ===========
+      # - {accept: "Control+Shift+1", select: .next, when: always}  
+      # - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
+      # - {accept: "Control+Shift+3", toggle: full_shape, when: always}
+      # - {accept: "Control+Shift+4", toggle: simplification, when: always}
+      # - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
+      # - {accept: "Control+Shift+exclam", select: .next, when: always}
+      # - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
+      # - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
+      # - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
+      # - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+      # ===========
+      # 候选相关
+      # ===========
+      - { when: paging, accept: bracketleft, send: Page_Up }        # [ 翻页
+      - { when: has_menu, accept: bracketright, send: Page_Down }   # ] 翻页
+      - { when: paging, accept: comma, send: Page_Up }              # , 翻页
+      - { when: has_menu, accept: period, send: Page_Down }         # . 翻页
+      - {when: has_menu, accept: semicolon, send: 2}                # ; 候选2
+      - {when: has_menu, accept: apostrophe, send: 3}               # ' 候选3
+      - {when: composing, accept: "Control+p", send: Up}            # ctrl + p 上一个
+      - {when: composing, accept: "Control+n", send: Down}          # ctrl + n 下一个
